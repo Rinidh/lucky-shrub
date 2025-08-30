@@ -48,7 +48,8 @@ header img {
   margin: auto;
 }
 
-nav {
+nav ul {
+  list-style: none;
   display: flex;
   justify-content: space-evenly;
   margin: 1rem 0 2rem;
