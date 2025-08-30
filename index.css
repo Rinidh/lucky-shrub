@@ -167,3 +167,22 @@ article.card:hover h4 {
 article.card p {
   font-size: 1em;
 }
+
+footer {
+  height: 30vh;
+  display: flex;
+  background-color: var(--theme-color);
+  color: white;
+}
+
+.footer-left,
+.footer-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer img {
+  max-height: 70%;
+}
