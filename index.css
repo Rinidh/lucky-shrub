@@ -8,6 +8,7 @@
 
 :root {
   --theme-color: rgb(0, 120, 54);
+  --light-theme-shadow: 0 5px 10px rgba(0, 100, 27, 0.2);
 }
 
 html {
@@ -38,7 +39,7 @@ button:hover {
 }
 
 header {
-  height: 20vh;
+  height: 15vh;
 }
 
 header img {
@@ -62,7 +63,7 @@ nav a {
   background-color: transparent;
   color: inherit;
   font-weight: 700;
-  box-shadow: 0 5px 10px rgba(0, 100, 27, 0.2);
+  box-shadow: var(--light-theme-shadow);
   cursor: pointer;
   transition: all 200ms linear;
 }
@@ -78,6 +79,8 @@ main {
   grid-template-areas:
     'banner banner banner'
     'offers1 offers2 offers3';
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;
 }
 
 main .banner {
@@ -112,17 +115,55 @@ main .banner img {
   font-size: 0.5em;
 }
 
-main .card:nth-child(1) {
+article.card:nth-child(1) {
+  background-color: aqua;
   grid-area: offers1;
 }
-main .card:nth-child(2) {
+article.card:nth-child(2) {
   grid-area: offers2;
 }
-main .card:nth-child(3) {
+article.card:nth-child(3) {
   grid-area: offers3;
 }
 
-main .card {
-  border: 2px solid red;
-  height: 5vh;
+article.card {
+  width: 100%;
+  height: 60vh;
+  border: 0.25rem solid var(--theme-color);
+  border-radius: 1rem;
+  transition: all 150ms linear;
+}
+
+article.card:hover {
+  transform: scale(1.02) translateY(-0.25rem);
+  box-shadow: 0 10px 30px rgba(0, 95, 25, 0.313);
+}
+
+article.card img {
+  display: block;
+  height: 50%;
+  margin: auto;
+  object-position: center;
+}
+
+article.card h4,
+article.card p {
+  margin: 1em;
+  text-align: center;
+}
+
+article.card h4 {
+  padding: 0.2em;
+  font-size: 1.5em;
+  transition: all 150ms linear;
+  border-radius: 0.2em;
+}
+
+article.card:hover h4 {
+  background-color: var(--theme-color);
+  color: white;
+}
+
+article.card p {
+  font-size: 1em;
 }
